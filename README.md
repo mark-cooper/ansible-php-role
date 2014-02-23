@@ -1,7 +1,7 @@
 PHP role
 ========
 
-Install PHP and related packages.
+Install PHP and related packages. Debian / Ubuntu only.
 
 ---
 
