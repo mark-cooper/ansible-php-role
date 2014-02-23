@@ -1,21 +1,6 @@
 ---
 # php tasks
 
-- name: ensure aptitude is present
-  sudo: yes
-  apt: name=aptitude state=present
-  tags: php
-
-- name: run update
-  sudo: yes
-  apt: update_cache=yes
-  tags: php
-
-- name: run upgrade
-  sudo: yes
-  apt: upgrade=safe
-  tags: php
-
 - name: install php core packages
   sudo: yes
   apt: name={{ item }} state=present
