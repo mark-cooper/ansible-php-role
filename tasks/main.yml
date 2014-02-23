@@ -1,6 +1,11 @@
 ---
 # php tasks
 
+- name: ensure aptitude is present
+  sudo: yes
+  apt: name=aptitude state=present
+  tags: php
+
 - name: run update
   sudo: yes
   apt: update_cache=yes
@@ -11,7 +16,17 @@
   apt: upgrade=safe
   tags: php
 
-- name: install php and related dependencies
+- name: install php core packages
+  sudo: yes
+  apt: name={{ item }} state=present
+  with_items:
+    - build-essential
+    - php5
+    - php5-dev
+    - php-pear
+    - libpcre3-dev
+
+- name: install php system packages
   sudo: yes
   apt: name={{ item }} state=present
   with_items: php_system_packages

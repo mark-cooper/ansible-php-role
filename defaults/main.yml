@@ -1,12 +1,6 @@
 ---
 
-php_system_packages:
-  - build-essential
-  - php5
-  - php5-curl
-  - php5-dev
-  - php-pear
-  - libpcre3-dev
+php_system_packages: []
 
 php_pear_channels: []
 

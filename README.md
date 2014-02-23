@@ -3,6 +3,14 @@ PHP role
 
 Install PHP and related packages. Debian / Ubuntu only.
 
+**Core packages:**
+
+- build-essential
+- php5
+- php5-dev
+- php-pear
+- libpcre3-dev
+
 ---
 
 List of variables:
@@ -21,7 +29,7 @@ List of variables:
       <td>php_system_packages</td>
       <td>Array</td>
       <td>PHP system packages to install</td>
-      <td>build-essential, php5, php5-curl, php5-dev, php-pear, libpcre3-dev</td>
+      <td>None</td>
     </tr>
       <td>php_pear_channels</td>
       <td>Array</td>
@@ -49,20 +57,15 @@ Examples:
 
 ```
 php_system_packages:
-  - build-essential
-  - php5
   - php5-curl
-  - php5-dev
   - php5-gd
   - php5-imagick
   - php5-memcache
   - php5-mysql
   - php5-xdebug
   - php5-xsl
-  - php-pear
   - php-soap
   - libapache2-mod-php5
-  - libpcre3-dev
 
 php_pear_channels:
   - pear.horde.org
@@ -83,7 +86,6 @@ php_pear_packages:
   - --onlyreqdeps Net_SMTP
   - --onlyreqdeps Pager
   - --onlyreqdeps XML_Serializer-beta
-  - --onlyreqdeps Console_ProgressBar-beta
   - Horde/Horde_Yaml-beta
 
 php_pecl_packages:
