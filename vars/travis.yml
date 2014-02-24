@@ -1,0 +1,16 @@
+---
+
+# travis test vars
+
+php_system_packages:
+  - php5-curl
+
+php_pear_channels:
+  - pear.horde.org
+
+php_pear_packages:
+  - --onlyreqdeps DB
+  - --onlyreqdeps DB_DataObject
+
+php_pecl_packages:
+  - apc
