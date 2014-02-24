@@ -1,6 +1,8 @@
 PHP role
 ========
 
+[![Build Status](https://travis-ci.org/mark-cooper/ansible-php-role.png?branch=master)](https://travis-ci.org/mark-cooper/ansible-php-role)
+
 Install PHP and related packages. Debian / Ubuntu only.
 
 **Core packages:**
