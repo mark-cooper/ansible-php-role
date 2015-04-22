@@ -3,7 +3,10 @@
 
 - name: install php core packages
   sudo: yes
-  apt: name={{ item }} state=present
+  yum:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
   with_items:
     - build-essential
     - php5
@@ -13,7 +16,9 @@
 
 - name: install php system packages
   sudo: yes
-  apt: name={{ item }} state=present
+  yum:
+    name: "{{ item }}"
+    state: present
   with_items: php_system_packages
   tags: php
 
