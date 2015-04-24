@@ -1,9 +1,10 @@
 ---
 
+# PHP system packages to install
 php_system_packages: []
-
+# List of pear channels to add
 php_pear_channels: []
-
+# List of pear packages to install
 php_pear_packages: []
-
+# List of pecl packages to install
 php_pecl_packages: []

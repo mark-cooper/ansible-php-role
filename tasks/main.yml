@@ -1,47 +1,52 @@
 ---
-# php tasks
 
 - name: install php core packages
-  sudo: yes
-  apt: name={{ item }} state=present
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
   with_items:
     - build-essential
     - php5
     - php5-dev
     - php-pear
     - libpcre3-dev
+  tags:
+    - php
 
 - name: install php system packages
-  sudo: yes
-  apt: name={{ item }} state=present
+  apt:
+    name: "{{ item }}"
+    state: present
   with_items: php_system_packages
-  tags: php
+  tags:
+    - php
 
 - name: discover pear channels
-  sudo: yes
-  command: pear channel-discover {{ item }}
+  command: >
+    pear channel-discover {{ item }}
   with_items: php_pear_channels
   register: pear_channel_result
   changed_when: "'initialized' not in pear_channel_result.stdout"
   failed_when: "'failed' in pear_channel_result.stdout"
-  tags: 
+  tags:
     - php
     - pear
 
 - name: install pear packages
-  sudo: yes
-  command: pear install {{ item }}
+  command: >
+    pear install {{ item }}
   with_items: php_pear_packages
   register: pear_package_result
   changed_when: "'is already installed' not in pear_package_result.stdout"
   failed_when: "'No releases available for package' in pear_package_result.stdout"
-  tags: 
+  tags:
     - php
     - pear
 
 - name: install pecl packages
-  sudo: yes
-  command: printf "\n" | pecl install {{ item }}
+  command: >
+    printf "\n" | pecl install {{ item }}
   with_items: php_pecl_packages
   register: pecl_package_result
   changed_when: "'is already installed' not in pecl_package_result.stdout"

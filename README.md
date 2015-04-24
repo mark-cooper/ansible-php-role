@@ -17,41 +17,17 @@ Install PHP and related packages. Debian / Ubuntu only.
 
 List of variables:
 
-<table>
-  <thead>
-    <tr>
-      <th>Variable</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Defaults</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>php_system_packages</td>
-      <td>Array</td>
-      <td>PHP system packages to install</td>
-      <td>None</td>
-    </tr>
-      <td>php_pear_channels</td>
-      <td>Array</td>
-      <td>List of pear channels to add</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>php_pear_packages</td>
-      <td>Array</td>
-      <td>List of pear packages to install</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>php_pecl_packages</td>
-      <td>Array</td>
-      <td>List of pecl packages to install</td>
-      <td>None</td>
-    </tr>
-  </tbody>
-</table>
+```yml
+# PHP system packages to install
+php_system_packages: []
+# List of pear channels to add
+php_pear_channels: []
+# List of pear packages to install
+php_pear_packages: []
+# List of pecl packages to install
+php_pecl_packages: []
+
+```
 
 ---
 
